@@ -12,7 +12,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from tokentab import pricing, report, sources  # noqa: E402
+from tokenweek import pricing, report, sources  # noqa: E402
 
 
 def _cc_row(mid, model="claude-opus-5", ts="2026-09-18T10:00:00.000Z", **usage):

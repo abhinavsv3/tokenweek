@@ -1,4 +1,4 @@
-"""tokentab CLI."""
+"""tokenweek CLI."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from . import __version__, report, sources
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        prog="tokentab",
+        prog="tokenweek",
         description="Where did my tokens go this week? Reads Claude Code, Codex and opencode "
                     "session logs from your own disk. No accounts, no network.",
     )
@@ -26,7 +26,7 @@ def main(argv: list[str] | None = None) -> int:
                    help="restrict to one tool (repeatable)")
     p.add_argument("--json", action="store_true", help="machine-readable output")
     p.add_argument("--no-color", action="store_true")
-    p.add_argument("--version", action="version", version=f"tokentab {__version__}")
+    p.add_argument("--version", action="version", version=f"tokenweek {__version__}")
     a = p.parse_args(argv)
 
     until = datetime.now(timezone.utc)

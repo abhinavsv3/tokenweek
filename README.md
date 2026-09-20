@@ -1,6 +1,6 @@
-# tokentab
+# tokenweek
 
-[![tests](https://github.com/abhinavsv3/tokentab/actions/workflows/test.yml/badge.svg)](https://github.com/abhinavsv3/tokentab/actions/workflows/test.yml)
+[![tests](https://github.com/abhinavsv3/tokenweek/actions/workflows/test.yml/badge.svg)](https://github.com/abhinavsv3/tokenweek/actions/workflows/test.yml)
 
 **Where did my tokens go this week?**
 
@@ -9,11 +9,11 @@ already keep on your disk, and tells you what you spent, on what, and what
 caching saved you. No accounts, no API key, no network, no dependencies.
 
 ```bash
-uvx tokentab
+uvx tokenweek
 ```
 
 ```
-tokentab  ·  last 7 days  ·  Sep 12 → Sep 19
+tokenweek  ·  last 7 days  ·  Sep 12 → Sep 19
 
   448 messages  ·  4 sessions  ·  claude-code
 
@@ -54,14 +54,14 @@ single line. If you are on a subscription there is no line at all, just a rate
 limit that hits at 4pm on a Thursday. Every agent already writes a detailed
 per-message record of what it used. Nobody reads it.
 
-`tokentab` reads it.
+`tokenweek` reads it.
 
 ## Install
 
 ```bash
-uvx tokentab            # run without installing
-pipx install tokentab   # or install
-pip install tokentab
+uvx tokenweek            # run without installing
+pipx install tokenweek   # or install
+pip install tokenweek
 ```
 
 Python 3.10+. No runtime dependencies; the standard library reads JSONL and
@@ -70,13 +70,13 @@ SQLite already.
 ## Usage
 
 ```bash
-tokentab                     # last 7 days
-tokentab --days 30
-tokentab --since 2026-09-01
-tokentab --all               # everything ever logged
-tokentab --by session --top 20
-tokentab --source claude-code
-tokentab --json | jq .total
+tokenweek                     # last 7 days
+tokenweek --days 30
+tokenweek --since 2026-09-01
+tokenweek --all               # everything ever logged
+tokenweek --by session --top 20
+tokenweek --source claude-code
+tokenweek --json | jq .total
 ```
 
 ## What it reads
@@ -87,7 +87,7 @@ tokentab --json | jq .total
 | Codex CLI | `~/.codex/sessions/**/rollout-*.jsonl` | `token_count` events, as deltas of the session's cumulative usage |
 | opencode | `~/.local/share/opencode/opencode.db` | `tokens` on assistant messages, cache read and write already split |
 
-Everything stays on your machine. `tokentab` opens files read-only and never
+Everything stays on your machine. `tokenweek` opens files read-only and never
 makes a network request.
 
 ## About the dollar figure
@@ -119,7 +119,7 @@ them; a pull request correcting them is welcome.
 
 **Claude Code logs the same API call several times.** Each content block of a
 response is its own JSONL row, and every row carries the full `usage` object.
-Sum them naively and every number doubles. `tokentab` counts each message id
+Sum them naively and every number doubles. `tokenweek` counts each message id
 once. If you build your own reader, this is the bug you will have.
 
 **Codex reports cumulative totals.** Each `token_count` event carries the

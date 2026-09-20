@@ -125,10 +125,10 @@ def render(records: list[Record], *, days: int | None, since: datetime, until: d
     if days is None:  # all time
         start = records[0].at if records else since
         span = f"{start.astimezone().strftime('%b %d %Y')} → {until.astimezone().strftime('%b %d %Y')}"
-        lines.append(bold("tokentab") + dim(f"  ·  all time  ·  {span}"))
+        lines.append(bold("tokenweek") + dim(f"  ·  all time  ·  {span}"))
     else:
         span = f"{since.astimezone().strftime('%b %d')} → {until.astimezone().strftime('%b %d')}"
-        lines.append(bold("tokentab") + dim(f"  ·  last {days} days  ·  {span}"))
+        lines.append(bold("tokenweek") + dim(f"  ·  last {days} days  ·  {span}"))
     lines.append("")
     if not records:
         lines.append("  No agent sessions found in this window.")

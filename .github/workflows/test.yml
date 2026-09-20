@@ -17,4 +17,4 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: pip install pytest
       - run: pytest -q tests
-      - run: python -m tokentab --all --no-color
+      - run: python -m tokenweek --all --no-color
