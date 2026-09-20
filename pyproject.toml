@@ -1,0 +1,20 @@
+[project]
+name = "tokentab"
+version = "0.1.0"
+description = "Where did my tokens go this week? One command, every coding agent, no accounts."
+authors = [{ name = "Abhinav S V" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["claude-code", "codex", "opencode", "tokens", "cost", "usage", "llm"]
+dependencies = []
+
+[project.scripts]
+tokentab = "tokentab.__main__:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["tokentab"]
