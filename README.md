@@ -1,5 +1,7 @@
 # tokentab
 
+[![tests](https://github.com/abhinavsv3/tokentab/actions/workflows/test.yml/badge.svg)](https://github.com/abhinavsv3/tokentab/actions/workflows/test.yml)
+
 **Where did my tokens go this week?**
 
 One command. Reads the session logs that Claude Code, Codex and opencode
